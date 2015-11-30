@@ -2,6 +2,12 @@
 	"name": "claremontdesign/cdcustomer",
 	"description": "Claremontdesign Customer Package",
 	"license": "ClaremontDesign License",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://claremontdesign.com/repo/"
+		}
+	],
 	"authors": [
 		{
 			"name": "Dennes B Abing",
