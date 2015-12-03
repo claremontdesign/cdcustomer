@@ -33,4 +33,12 @@ class Cdcustomer extends Cdbase
 		];
 	}
 
+	/**
+	 * Reutrn the Customer Repo
+	 * @return Repository
+	 */
+	public function repo()
+	{
+		return $this->createModelRepo(cd_config('database.customers'));
+	}
 }

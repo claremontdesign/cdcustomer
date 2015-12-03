@@ -128,7 +128,7 @@ return [
 						],
 						'validation' => [
 							'required' => [
-								'enable' => true,
+								'enable' => false,
 								'message' => 'Title.'
 							],
 						],

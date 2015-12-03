@@ -14,8 +14,30 @@
  *
  * Example of a Module
  */
-defined('MODULE_CUSTOMERS') ?: define('MODULE_CUSTOMERS', 'customers');
+defined('MODULE_CUSTOMERS') ? : define('MODULE_CUSTOMERS', 'customers');
 $config = [
+	'template' => [
+		'backend' => [
+			'nav' => [
+				'main' => [
+					'customers' => [
+						'breadcrumbs' => true,
+						'label' => 'Customers',
+						'title' => 'Manage Customers',
+						'icon' => 'fa fa-users',
+						'access' => 'admin',
+						'enable' => true,
+						'url' => [
+							'route' => [
+								'name' => 'Module',
+								'module' => 'customers'
+							],
+						],
+					],
+				]
+			],
+		],
+	],
 	'modules' => [
 		/**
 		 * admin/moduleIndex/actionIndex/taskIndex/recordIndex
@@ -69,8 +91,12 @@ $config = [
 			/**
 			 * Module Attributes
 			 */
-			'attributes' => [
-				'breadcrumbs' => []
+			'metas' => [
+				'pagetitle' => 'Customers',
+				'pagesubtitle' => 'Manage Customers.'
+			],
+			'breadcrumb' => [
+				'nav::customers'
 			],
 			/**
 			 * Actions
@@ -119,10 +145,18 @@ $config = [
 				],
 				'create' => [
 					'enable' => true,
-					'widgets' => ['customersForm']
+					'widgets' => ['customersForm'],
+					'metas' => [
+						'pagetitle' => 'Create',
+						'pagesubtitle' => 'Create a new customer.'
+					],
+				],
+				'select' => [
+					'enable' => true,
+					'widgets' => ['customersSelect'],
 				],
 			],
 		]
 	],
 ];
-return array_merge_recursive($config, require __DIR__ . '/form.php', require __DIR__ . '/datatable.php');
+return array_merge_recursive($config, require __DIR__ . '/form.php', require __DIR__ . '/datatable.php', require __DIR__ . '/select.php');

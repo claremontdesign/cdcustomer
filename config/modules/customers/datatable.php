@@ -12,7 +12,6 @@
  * @file config.php
  * @project Cdbackend
  */
-
 return [
 	/**
 	 * Collection of Widgets that this module is offered
@@ -43,6 +42,23 @@ return [
 					'recordName' => [
 						'singular' => 'Customer',
 						'plural' => 'Customers'
+					],
+				],
+			],
+			'toolbars' => [
+				'topleft' => [
+					'create' => [
+						'enable' => true,
+						'attributes' => [
+							'label' => 'New Customer',
+						],
+						'url' => [
+							'route' => [
+								'name' => 'Module',
+								'module' => MODULE_CUSTOMERS,
+								'action' => 'create',
+							],
+						],
 					],
 				],
 			],
@@ -120,7 +136,7 @@ return [
 					'ui' => [
 						'html' => [
 							'filterInput' => [
-								'placeholder' => 'Customer Id'
+								'placeholder' => 'ID'
 							],
 						],
 						'events' => [],
@@ -247,7 +263,7 @@ return [
 					],
 				],
 				'updated' => [
-					'enable' => true,
+					'enable' => false,
 					'type' => 'datetime',
 					'index' => 'updated_at',
 					'attributes' => [

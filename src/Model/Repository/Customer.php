@@ -24,12 +24,12 @@ class Customer extends Repository
 	/**
 	 * Find records by Id
 	 * @param string $id
-	 * @return Product
+	 * @return Model
 	 */
-	public function byId($id, $enabled = true)
+	public function byId($id)
 	{
 		$filters = [
-			$this->_table() . '.' . $this->_primaryKey()
+			$this->_table() . '.' . $this->_primaryKey() => $id
 		];
 		return $this->_cast($this->repo->setDebug(false)->getAll($this->_columns(), $filters, [], $this->_joins(), false, [])->first());
 	}
