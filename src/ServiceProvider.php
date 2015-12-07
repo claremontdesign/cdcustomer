@@ -26,6 +26,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 		});
 		app('cdbase')->addPackage(\Claremontdesign\Cdcustomer\Cdcustomer::class);
 		app('cdbase')->addModule('customers', __DIR__ . '/../config/modules/customers/customers.php');
+		app('cdbase')->addCommand('migrate', 'db:seed --class=CustomerTableSeeder');
 	}
 
 	public function boot()
