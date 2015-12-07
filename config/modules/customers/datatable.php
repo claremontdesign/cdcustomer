@@ -110,6 +110,7 @@ return [
 					 * 	include the DB column prefix
 					 * default to columnIndex
 					 */
+					'position' => 1,
 					'enable' => true,
 					'index' => cd_config('database.customers.table.primary'),
 					'filter' => [
@@ -143,6 +144,7 @@ return [
 					],
 				],
 				'title' => [
+					'position' => 2,
 					'index' => 'title',
 					'type' => 'string',
 					'attributes' => [
@@ -164,16 +166,17 @@ return [
 					],
 				],
 				'firstName' => [
-					'index' => 'first_name',
+					'position' => 3,
+					'index' => 'name',
 					'type' => 'string',
 					'attributes' => [
-						'label' => 'First Name',
+						'label' => 'Name',
 					],
 					'enable' => true,
 					'ui' => [
 						'html' => [
 							'filterInput' => [
-								'placeholder' => 'Search First Name'
+								'placeholder' => 'Search Name'
 							],
 						],
 					],
@@ -182,15 +185,17 @@ return [
 					],
 					'filter' => [
 						'enable' => true,
+						'index' => ['first_name','last_name'],
 					],
 				],
 				'lastName' => [
+					'position' => 4,
 					'index' => 'last_name',
 					'type' => 'string',
 					'attributes' => [
 						'label' => 'Last Name',
 					],
-					'enable' => true,
+					'enable' => false,
 					'ui' => [
 						'html' => [
 							'filterInput' => [
@@ -206,6 +211,7 @@ return [
 					],
 				],
 				'gender' => [
+					'position' => 5,
 					'index' => 'gender',
 					'type' => 'string',
 					'attributes' => [
@@ -227,6 +233,7 @@ return [
 					],
 				],
 				'email' => [
+					'position' => 6,
 					'index' => 'email_address',
 					'type' => 'string',
 					'attributes' => [
@@ -248,6 +255,7 @@ return [
 					],
 				],
 				'created' => [
+					'position' => 7,
 					'index' => 'created_at',
 					'type' => 'datetime',
 					'enable' => true,
@@ -263,6 +271,7 @@ return [
 					],
 				],
 				'updated' => [
+					'position' => 8,
 					'enable' => false,
 					'type' => 'datetime',
 					'index' => 'updated_at',

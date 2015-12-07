@@ -93,6 +93,14 @@ class Customer extends Model implements WidgetModelInterface, FilterableInterfac
 		return 'Male';
 	}
 
+	/**
+	 * Customer Name
+	 */
+	public function name()
+	{
+		return $this->first_name . ' ' . $this->last_name;
+	}
+
 	// <editor-fold defaultstate="collapsed" desc="WIDGET">
 	/**
 	 * Check widget access
